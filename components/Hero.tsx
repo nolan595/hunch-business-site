@@ -1,13 +1,14 @@
-"use client";
-
-import { motion } from "framer-motion";
 import Button from "@/components/ui/Button";
 import { regions } from "@/lib/data/regions";
 
 const headline = "Free-to-play, built from the inside out.";
 
-// Fast delays — content visible within 0.5s regardless of device
-const d = { eyebrow: 0.05, headline: 0.15, subtitle: 0.25, cta: 0.35, flags: 0.45 };
+// CSS animation helper — runs before any JS loads
+function heroStyle(delay: number, fade = false): React.CSSProperties {
+  return {
+    animation: `${fade ? "hero-fade" : "hero-in"} 0.5s ease-out ${delay}s both`,
+  };
+}
 
 export default function Hero() {
   return (
@@ -28,57 +29,44 @@ export default function Hero() {
       </div>
 
       <div className="relative mx-auto max-w-7xl px-6 py-32 lg:py-0">
-        {/* Eyebrow */}
-        <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: d.eyebrow }}
+        <p
+          style={heroStyle(0.05)}
           className="mb-6 text-xs font-medium uppercase tracking-[0.15em] text-brand-cyan"
         >
           In-house F2P for Superbet
-        </motion.p>
+        </p>
 
-        {/* H1 — single block fade, works instantly on all devices */}
-        <motion.h1
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: d.headline }}
+        <h1
+          style={{
+            ...heroStyle(0.15),
+            fontSize: "clamp(3rem, 8vw, 6rem)",
+          }}
           className="mb-6 max-w-4xl font-display font-bold leading-[1.05] tracking-tight text-white"
-          style={{ fontSize: "clamp(3rem, 8vw, 6rem)" }}
         >
           {headline}
-        </motion.h1>
+        </h1>
 
-        {/* Subtitle */}
-        <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: d.subtitle }}
+        <p
+          style={heroStyle(0.25)}
           className="mb-10 max-w-[60ch] text-lg leading-relaxed text-grey-200"
         >
           Hunch is the sole F2P partner to Superbet &mdash; and that closeness
           is the product. Deeper integration, smarter data, games that feel
           native, not bolted on.
-        </motion.p>
+        </p>
 
-        {/* CTAs */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.4, delay: d.cta }}
+        <div
+          style={heroStyle(0.35)}
           className="mb-12 flex flex-wrap gap-4"
         >
           <Button href="#games">See our games</Button>
           <Button href="#team" variant="secondary">
             Meet the team
           </Button>
-        </motion.div>
+        </div>
 
-        {/* Country flags row */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: d.flags }}
+        <div
+          style={heroStyle(0.45, true)}
           className="flex flex-wrap items-center gap-4"
         >
           <div className="flex gap-3 text-2xl">
@@ -91,9 +79,8 @@ export default function Hero() {
           <span className="text-xs font-medium uppercase tracking-[0.15em] text-brand-cyan">
             Live in {regions.length} markets
           </span>
-        </motion.div>
+        </div>
       </div>
-
     </section>
   );
 }

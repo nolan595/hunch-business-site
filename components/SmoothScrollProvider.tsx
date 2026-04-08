@@ -24,6 +24,8 @@ export function SmoothScrollProvider({ children }: { children: ReactNode }) {
       "(prefers-reduced-motion: reduce)"
     ).matches;
     if (prefersReduced) return;
+    // Skip Lenis on mobile — native scroll is faster and avoids iOS conflicts
+    if (window.innerWidth < 1024) return;
 
     const instance = new Lenis({ autoRaf: false });
     setLenis(instance);
