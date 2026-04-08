@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { Target, Flame, Zap } from "lucide-react";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { fadeUp, staggerContainer, slideFromRight } from "@/lib/motion";
-import { useIsMobile } from "@/lib/hooks/useIsMobile";
 
 const features = [
   {
@@ -25,7 +24,6 @@ const features = [
 ];
 
 export default function WhatWeDo() {
-  const isMobile = useIsMobile();
   return (
     <section id="what-we-do" className="bg-grey-50 py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6">
@@ -55,7 +53,7 @@ export default function WhatWeDo() {
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: isMobile ? "0px" : "-100px" }}
+            viewport={{ once: true, margin: "0px" }}
             className="flex flex-col gap-6"
           >
             {features.map((f) => (

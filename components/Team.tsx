@@ -8,7 +8,6 @@ import { leadership, product, ops, type TeamMember } from "@/lib/data/team";
 import { staggerContainerFast, fadeUp } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
-import { useIsMobile } from "@/lib/hooks/useIsMobile";
 
 function TeamCard({ member }: { member: TeamMember }) {
   const [imgError, setImgError] = useState(false);
@@ -56,13 +55,12 @@ function TeamRow({
   members: TeamMember[];
   cols: string;
 }) {
-  const isMobile = useIsMobile();
   return (
     <motion.div
       variants={staggerContainerFast}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, margin: isMobile ? "0px" : "-100px" }}
+      viewport={{ once: true, margin: "0px" }}
       className={cn("grid gap-6", cols)}
     >
       {members.map((m) => (

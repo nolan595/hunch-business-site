@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { fadeUp, staggerContainer } from "@/lib/motion";
-import { useIsMobile } from "@/lib/hooks/useIsMobile";
 
 const reasons = [
   {
@@ -24,7 +23,6 @@ const reasons = [
 ];
 
 export default function WhyInHouse() {
-  const isMobile = useIsMobile();
   return (
     <section id="why-in-house" className="bg-grey-50 py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6">
@@ -34,7 +32,7 @@ export default function WhyInHouse() {
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: isMobile ? "0px" : "-100px" }}
+          viewport={{ once: true, margin: "0px" }}
           className="grid gap-12 lg:grid-cols-3"
         >
           {reasons.map((r) => (

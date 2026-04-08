@@ -155,6 +155,8 @@ export default function Games() {
   useEffect(() => {
     const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (prefersReduced) return;
+    // Skip pin on mobile — GSAP pin creates blank scroll gaps on mobile browsers
+    if (window.innerWidth < 1024) return;
 
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({
@@ -181,7 +183,7 @@ export default function Games() {
     <section id="games" className="bg-brand-violet-dk">
       <div
         ref={sectionRef}
-        className="relative flex min-h-[100dvh] flex-col justify-center py-20"
+        className="relative flex flex-col justify-center py-20 lg:min-h-[100dvh]"
       >
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6">
           <SectionHeading
@@ -191,11 +193,18 @@ export default function Games() {
             dark
           />
 
-          <div className="relative mt-8">
+          {/* Mobile: both games in normal flow, no overlap */}
+          <div className="lg:hidden mt-8 flex flex-col gap-16">
+            <GameSlide game={games[0]} />
+            <GameSlide game={games[1]} />
+          </div>
+
+          {/* Desktop: GSAP-animated overlay */}
+          <div className="relative mt-8 hidden lg:block">
             <div ref={game1Ref}>
               <GameSlide game={games[0]} />
             </div>
-            <div ref={game2Ref} className="absolute inset-0">
+            <div ref={game2Ref} className="absolute inset-0" style={{ opacity: 0 }}>
               <GameSlide game={games[1]} />
             </div>
           </div>
