@@ -1,8 +1,35 @@
 # Deployment — Hunch Marketing Site
 
+## Live deployment
+
+| | |
+|---|---|
+| **Live URL** | https://hunch-business-site.netlify.app |
+| **GitHub repo** | https://github.com/nolan595/hunch-business-site |
+| **Netlify site name** | hunch-business-site |
+| **Netlify account** | nolan595 (markjnolan00@gmail.com) |
+| **Auto-deploy** | Enabled — every push to `main` triggers a new deploy |
+
+## Deploying updates
+
+Push to `main` and Netlify will automatically build and deploy:
+
+```bash
+git add .
+git commit -m "your message"
+git push
+```
+
+Or trigger a manual deploy:
+
+```bash
+netlify deploy --prod
+```
+
 ## Platform
 
-**Vercel** — auto-deploys from `main` branch.
+**Netlify** — auto-deploys from `main` branch via GitHub integration.
+Build runs on Netlify CI using `pnpm run build` with the `@netlify/plugin-nextjs` runtime.
 
 ## Prerequisites
 
@@ -23,6 +50,14 @@ pnpm lint       # ESLint
 
 None required. This is a fully static site with no API keys or secrets.
 
+## Netlify Configuration
+
+See `netlify.toml` in the project root:
+- **Build command:** `pnpm run build`
+- **Publish directory:** `.next`
+- **Node version:** 22
+- **Plugin:** `@netlify/plugin-nextjs` (handles static + serverless Next.js output)
+
 ## Security Headers
 
 Configured in `next.config.ts`:
@@ -30,22 +65,6 @@ Configured in `next.config.ts`:
 - `X-Content-Type-Options: nosniff`
 - `Referrer-Policy: strict-origin-when-cross-origin`
 - `Permissions-Policy: camera=(), microphone=(), geolocation=()`
-
-## Deploy Steps
-
-1. Push to `main` on GitHub
-2. Vercel auto-builds and deploys
-3. Preview deployments created for all PRs
-
-## Pre-Deploy Checklist
-
-- [ ] `pnpm build` passes with zero errors
-- [ ] Brand assets present in `/public/brand/`
-- [ ] Game mockups present in `/public/games/`
-- [ ] Team photos present in `/public/team/`
-- [ ] All `// TODO: confirm` values reviewed
-- [ ] Lighthouse audit on preview URL
-- [ ] Safari testing for GSAP pinned section
 
 ## External Dependencies
 
@@ -55,3 +74,4 @@ Configured in `next.config.ts`:
 ## Domain
 
 TBD — Hunch to confirm domain and DNS setup.
+Configure in Netlify dashboard: Site settings → Domain management → Add custom domain.
