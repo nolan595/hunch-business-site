@@ -1,26 +1,128 @@
 @import "tailwindcss";
 
+/* ─── Brand Tokens ─────────────────────────────── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --brand-magenta: #E930B8;
+  --brand-cyan: #3FE0D0;
+  --brand-violet: #3D1E91;
+  --brand-violet-dk: #1A0B47;
+  --violet-500: #5E3BE1;
+  --violet-200: #C4ABFA;
+  --violet-50: #EFE8FE;
+  --secondary-teal: #19C9A5;
+
+  --grey-50: #FAFAFA;
+  --grey-100: #F5F5F5;
+  --grey-200: #EEEEEE;
+  --grey-300: #E0E0E0;
+  --grey-400: #BDBDBD;
+  --grey-500: #9E9E9E;
+  --grey-600: #757575;
+  --grey-700: #616161;
+  --grey-800: #424242;
+  --grey-900: #212121;
 }
 
+/* ─── Tailwind v4 Theme ────────────────────────── */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-brand-magenta: var(--brand-magenta);
+  --color-brand-cyan: var(--brand-cyan);
+  --color-brand-violet: var(--brand-violet);
+  --color-brand-violet-dk: var(--brand-violet-dk);
+  --color-violet-500: var(--violet-500);
+  --color-violet-200: var(--violet-200);
+  --color-violet-50: var(--violet-50);
+  --color-secondary-teal: var(--secondary-teal);
+
+  --color-grey-50: var(--grey-50);
+  --color-grey-100: var(--grey-100);
+  --color-grey-200: var(--grey-200);
+  --color-grey-300: var(--grey-300);
+  --color-grey-400: var(--grey-400);
+  --color-grey-500: var(--grey-500);
+  --color-grey-600: var(--grey-600);
+  --color-grey-700: var(--grey-700);
+  --color-grey-800: var(--grey-800);
+  --color-grey-900: var(--grey-900);
+
+  --font-display: var(--font-space-grotesk);
+  --font-body: var(--font-inter);
+
+  --animate-pulse-ring: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ─── Keyframes ────────────────────────────────── */
+@keyframes drift {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(100px, -80px) scale(1.2);
   }
 }
 
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* ─── Focus Ring ───────────────────────────────── */
+*:focus-visible {
+  outline: 2px solid var(--brand-cyan);
+  outline-offset: 2px;
+}
+
+/* ─── Skip Link ────────────────────────────────── */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10000;
+  padding: 0.75rem 1.5rem;
+  background: var(--brand-magenta);
+  color: white;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: top 0.2s;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* ─── Base ─────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--brand-violet-dk);
+  color: #ffffff;
+  font-family: var(--font-body), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Scroll Progress Bar ──────────────────────── */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: var(--brand-magenta);
+  transform-origin: left;
+  z-index: 9999;
+}
+
+/* ─── Selection ────────────────────────────────── */
+::selection {
+  background: var(--brand-magenta);
+  color: #ffffff;
 }
