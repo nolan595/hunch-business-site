@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { fadeUp } from "@/lib/motion";
 import { cn } from "@/lib/utils";
+import { useIsMobile } from "@/lib/hooks/useIsMobile";
 
 interface SectionHeadingProps {
   eyebrow?: string;
@@ -19,12 +20,13 @@ export default function SectionHeading({
   dark = false,
   className,
 }: SectionHeadingProps) {
+  const isMobile = useIsMobile();
   return (
     <motion.div
       variants={fadeUp}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, margin: "-100px" }}
+      viewport={{ once: true, margin: isMobile ? "0px" : "-100px" }}
       className={cn("mb-12 max-w-3xl", className)}
     >
       {eyebrow && (

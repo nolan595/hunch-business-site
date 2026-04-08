@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import StatCounter from "@/components/ui/StatCounter";
 import { staggerContainer, fadeUp } from "@/lib/motion";
+import { useIsMobile } from "@/lib/hooks/useIsMobile";
 
 const stats = [
   { value: 6, label: "Live markets" },
@@ -12,13 +13,14 @@ const stats = [
 ];
 
 export default function Stats() {
+  const isMobile = useIsMobile();
   return (
     <section id="stats" className="bg-grey-50 py-16 lg:py-20">
       <motion.div
         variants={staggerContainer}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-50px" }}
+        viewport={{ once: true, margin: isMobile ? "0px" : "-50px" }}
         className="mx-auto max-w-7xl px-6"
       >
         <div className="grid grid-cols-2 gap-8 lg:grid-cols-4">
