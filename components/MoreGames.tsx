@@ -11,11 +11,11 @@ import { cn } from "@/lib/utils";
 
 // ─── Phone fan ───────────────────────────────────────────────────────────────
 
-function PhoneFan({ srcs, gradient }: { srcs: string[]; gradient: string }) {
+function PhoneFan({ srcs, gradient, phoneWidth = 90 }: { srcs: string[]; gradient: string; phoneWidth?: number }) {
   const rotations = [-8, 0, 8];
   const scales = [0.82, 1, 0.82];
   const opacities = [0.65, 1, 0.65];
-  const W = 90;
+  const W = phoneWidth;
   const H = Math.round(W * (19.5 / 9));
 
   if (srcs.length === 0) {
@@ -44,7 +44,7 @@ function PhoneFan({ srcs, gradient }: { srcs: string[]; gradient: string }) {
             className="relative overflow-hidden rounded-[1.25rem] border border-white/10"
             style={{ width: W, height: H }}
           >
-            <Image src={src} alt="" fill sizes="90px" className="object-cover" />
+            <Image src={src} alt="" fill sizes={`${W}px`} className="object-cover" />
           </div>
         </div>
       ))}
@@ -88,8 +88,6 @@ function GameCard({
   game: ComingSoonGame;
   onClick: () => void;
 }) {
-  const hasScreenshot = game.screenshotSrcs.length > 0;
-
   return (
     <motion.button
       variants={fadeUp}
@@ -97,21 +95,12 @@ function GameCard({
       className="group relative w-full cursor-pointer overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] text-left transition-all duration-200 hover:-translate-y-1 hover:border-white/20 hover:shadow-2xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-cyan"
       aria-label={`Preview ${game.name}`}
     >
-      {/* Screenshot / placeholder */}
-      <div className="relative aspect-[4/3] w-full overflow-hidden bg-brand-violet/20">
-        {hasScreenshot ? (
-          <Image
-            src={game.screenshotSrcs[0]}
-            alt={`${game.name} screenshot`}
-            fill
-            className="object-contain transition-transform duration-500 group-hover:scale-105"
-          />
-        ) : (
-          <GamePlaceholder game={game} className="absolute inset-0" />
-        )}
+      {/* Phone fan */}
+      <div className="relative flex items-center justify-center overflow-hidden bg-gradient-to-b from-brand-violet/40 to-brand-violet-dk py-8">
+        <PhoneFan srcs={game.screenshotSrcs} gradient={game.gradient} phoneWidth={130} />
 
         {/* Expand hint on hover */}
-        <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+        <div className="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
           <div className="flex items-center gap-2 rounded-full border border-white/20 bg-black/40 px-4 py-2 text-sm font-medium text-white backdrop-blur-sm">
             <Expand size={14} />
             Preview
@@ -273,7 +262,7 @@ export default function MoreGames() {
           <SectionHeading
             eyebrow="Coming soon"
             title="New games in the pipeline."
-            subtitle="Three new formats launching across Super Technologies markets — built in-house, designed to convert."
+            subtitle="Three new formats launching across Super Technology markets — built in-house, designed to convert."
             dark
           />
 
