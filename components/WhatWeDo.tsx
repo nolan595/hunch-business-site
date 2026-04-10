@@ -31,7 +31,7 @@ export default function WhatWeDo() {
           {/* Left column */}
           <div>
             <SectionHeading
-              title="Free games that fans back."
+              title="Free games that bring fans back."
               className="mb-6"
             />
             <motion.p

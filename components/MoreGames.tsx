@@ -11,7 +11,17 @@ import { cn } from "@/lib/utils";
 
 // ─── Phone fan ───────────────────────────────────────────────────────────────
 
-function PhoneFan({ srcs, gradient, phoneWidth = 90 }: { srcs: string[]; gradient: string; phoneWidth?: number }) {
+function PhoneFan({
+  srcs,
+  gradient,
+  phoneWidth = 90,
+  blur = false,
+}: {
+  srcs: string[];
+  gradient: string;
+  phoneWidth?: number;
+  blur?: boolean;
+}) {
   const rotations = [-8, 0, 8];
   const scales = [0.82, 1, 0.82];
   const opacities = [0.65, 1, 0.65];
@@ -44,7 +54,13 @@ function PhoneFan({ srcs, gradient, phoneWidth = 90 }: { srcs: string[]; gradien
             className="relative overflow-hidden rounded-[1.25rem] border border-white/10"
             style={{ width: W, height: H }}
           >
-            <Image src={src} alt="" fill sizes={`${W}px`} className="object-cover" />
+            <Image
+              src={src}
+              alt=""
+              fill
+              sizes={`${W}px`}
+              className={cn("object-cover", blur && "blur-sm scale-110")}
+            />
           </div>
         </div>
       ))}
@@ -97,7 +113,7 @@ function GameCard({
     >
       {/* Phone fan */}
       <div className="relative flex items-center justify-center overflow-hidden bg-gradient-to-b from-brand-violet/40 to-brand-violet-dk py-8">
-        <PhoneFan srcs={game.screenshotSrcs} gradient={game.gradient} phoneWidth={130} />
+        <PhoneFan srcs={game.screenshotSrcs} gradient={game.gradient} phoneWidth={130} blur />
 
         {/* Expand hint on hover */}
         <div className="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 transition-opacity duration-200 group-hover:opacity-100">

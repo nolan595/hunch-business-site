@@ -75,7 +75,7 @@ export default function Nav() {
               alt="Super Technologies"
               width={120}
               height={36}
-              className="h-8 w-auto"
+              className="h-5 w-auto"
             />
           </a>
 
