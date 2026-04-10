@@ -31,7 +31,7 @@ export default function WhatWeDo() {
           {/* Left column */}
           <div>
             <SectionHeading
-              title="Prediction games that bring fans back."
+              title="Free games that fans back."
               className="mb-6"
             />
             <motion.p
@@ -41,7 +41,7 @@ export default function WhatWeDo() {
               viewport={{ once: true }}
               className="max-w-lg text-lg leading-relaxed text-grey-600"
             >
-              Hunch builds free-to-play prediction games inside the Superbet
+              Hunch builds free-to-play prediction games inside the Super
               ecosystem &mdash; from one-off tournament pick&rsquo;ems to daily
               streak games that turn casual fans into habits. Every game is
               designed to feel native to the sportsbook, because it is.

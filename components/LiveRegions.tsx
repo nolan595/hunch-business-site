@@ -53,7 +53,7 @@ export default function LiveRegions() {
         <SectionHeading
           eyebrow="Where we are"
           title="Live in 6 markets — and growing."
-          subtitle="From Bucharest to São Paulo, Hunch games run inside Superbet's biggest sportsbook properties."
+          subtitle="From Bucharest to São Paulo, Hunch games run inside Super's biggest sportsbook properties. Our best in class SaaS platform is built for speed and scale — launching new regions with configurations, not development cycles."
           dark
         />
 

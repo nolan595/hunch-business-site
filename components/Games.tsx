@@ -189,7 +189,7 @@ export default function Games() {
           <SectionHeading
             eyebrow="Our games"
             title="Our games."
-            subtitle="Two flagship products, hundreds of variants, all live inside Superbet."
+            subtitle="Two flagship products, hundreds of variants, all live inside Super."
             dark
           />
 

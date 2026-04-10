@@ -16,24 +16,6 @@ export interface Game {
 // TODO: confirm all stat values with Hunch
 export const games: Game[] = [
   {
-    id: "superpredictor",
-    name: "Superpredictor",
-    tagline: "Predict the unpredictable.",
-    description:
-      "Pick\u2019em games tied to real fixtures. Players predict scores, stats, and outcomes \u2014 then win free bets, spins, and loyalty coins.",
-    color: "magenta",
-    mockupSrcs: [
-      "/games/PredictorLeft.jpg",
-      "/games/PredictorMain.png",
-      "/games/PredictorRight.png",
-    ],
-    stats: [
-      { value: "10M+", label: "predictions placed" },
-      { value: "32%", label: "D7 retention" },
-      { value: "6", label: "live markets" },
-    ],
-  },
-  {
     id: "hotstreak",
     name: "Hotstreak",
     tagline: "Don\u2019t break the chain.",
@@ -48,7 +30,25 @@ export const games: Game[] = [
     stats: [
       { value: "Daily", label: "active streaks" },
       { value: "Jackpot", label: "mechanic" },
-      { value: "Native", label: "to Superbet app" },
+      { value: "Native", label: "to Super app" },
+    ],
+  },
+  {
+    id: "superpredictor",
+    name: "Superpredictor",
+    tagline: "Predict the unpredictable.",
+    description:
+      "Pick\u2019em games tied to real fixtures. Players predict scores, stats, and outcomes \u2014 then win free bets, spins, and loyalty coins.",
+    color: "cyan",
+    mockupSrcs: [
+      "/games/PredictorLeft.jpg",
+      "/games/PredictorMain.png",
+      "/games/PredictorRight.png",
+    ],
+    stats: [
+      { value: "44M+", label: "predictions placed" },
+      { value: "85%", label: "WoW retention" },
+      { value: "6", label: "live markets" },
     ],
   },
 ];

@@ -8,7 +8,7 @@ const reasons = [
   {
     num: "01",
     title: "Deeper integration",
-    body: "Because we\u2019re inside, we\u2019re not bolted on. Hunch games share the same auth, wallet, design language, and player profile as the rest of Superbet \u2014 players never feel like they\u2019ve left.",
+    body: "Because we\u2019re inside, we\u2019re not bolted on. Hunch games share the same auth, wallet, design language, and player profile as the rest of Super \u2014 players never feel like they\u2019ve left.",
   },
   {
     num: "02",
@@ -18,7 +18,7 @@ const reasons = [
   {
     num: "03",
     title: "Speed and ownership",
-    body: "No vendor roadmaps, no integration tickets. When Superbet wants a Champions League pick\u2019em next week, we ship a Champions League pick\u2019em next week.",
+    body: "Proactive to the objectives and challenges of Super, not others. Designed to complement, not compete.",
   },
 ];
 
@@ -26,7 +26,7 @@ export default function WhyInHouse() {
   return (
     <section id="why-in-house" className="bg-grey-50 py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6">
-        <SectionHeading title="Most sportsbooks rent their F2P. Superbet built one." />
+        <SectionHeading title="Most Operators rent their F2P. Super owns one." />
 
         <motion.div
           variants={staggerContainer}

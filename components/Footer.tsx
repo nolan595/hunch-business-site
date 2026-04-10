@@ -13,7 +13,7 @@ export default function Footer() {
         />
 
         <p className="text-sm text-grey-500">
-          &copy; {new Date().getFullYear()} Hunch. An in-house Superbet company.
+          &copy; {new Date().getFullYear()} Hunch. An in-house Super Technologies company.
         </p>
 
         <div className="flex items-center gap-6">

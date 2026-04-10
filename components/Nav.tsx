@@ -59,15 +59,23 @@ export default function Nav() {
           aria-label="Main navigation"
           className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4"
         >
-          {/* Logo */}
-          <a href="#hero" className="flex-shrink-0">
+          {/* Logo lockup */}
+          <a href="#hero" className="flex-shrink-0 flex items-center gap-3">
             <Image
               src="/brand/hunch-logo-violet.png"
-              alt="Hunch — back to top"
+              alt="Hunch"
               width={120}
               height={36}
               className="h-8 w-auto"
               priority
+            />
+            <span className="text-white/30 text-base font-light select-none">×</span>
+            <Image
+              src="/brand/super.png"
+              alt="Super Technologies"
+              width={120}
+              height={36}
+              className="h-8 w-auto"
             />
           </a>
 
