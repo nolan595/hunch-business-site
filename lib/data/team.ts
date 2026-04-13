@@ -3,10 +3,11 @@ export interface TeamMember {
   role: string;
   slug: string;
   bio: string;
+  photoPosition?: string;
 }
 
 export const leadership: TeamMember[] = [
-  { name: "Rob Egan", role: "Co-founder & MD", slug: "Rob", bio: "" },
+  { name: "Rob Egan", role: "Co-founder & MD", slug: "Rob", bio: "", photoPosition: "center 10%" },
   { name: "Mark Nolan", role: "Co-founder & CTO", slug: "markN", bio: "" },
   { name: "Renata Dima", role: "Head of Design & Research", slug: "Renata", bio: "" },
 ];

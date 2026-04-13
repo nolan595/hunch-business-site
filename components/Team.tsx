@@ -26,7 +26,8 @@ function TeamCard({ member }: { member: TeamMember }) {
               src={photoSrc}
               alt={member.name}
               fill
-              className="object-cover object-top transition-all duration-300"
+              className="object-cover transition-all duration-300"
+              style={{ objectPosition: member.photoPosition ?? "center top" }}
               onError={() => setImgError(true)}
             />
             {/* Gradient fade — unifies mixed image backgrounds */}
