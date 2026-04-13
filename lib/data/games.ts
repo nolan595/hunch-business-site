@@ -23,9 +23,9 @@ export const games: Game[] = [
       "Daily prediction challenges that compound. Players return every day to keep their streak alive and chase the jackpot.",
     color: "cyan",
     mockupSrcs: [
-      "/games/StreakLeft.png",
-      "/games/StreakMain.png",
-      "/games/StreakRight.jpg",
+      "/games/StreakLeft.webp",
+      "/games/StreakMain.webp",
+      "/games/StreakRight.webp",
     ],
     stats: [
       { value: "Daily", label: "active streaks" },
@@ -41,9 +41,9 @@ export const games: Game[] = [
       "Pick\u2019em games tied to real fixtures. Players predict scores, stats, and outcomes \u2014 then win free bets, spins, and loyalty coins.",
     color: "cyan",
     mockupSrcs: [
-      "/games/PredictorLeft.jpg",
-      "/games/PredictorMain.png",
-      "/games/PredictorRight.png",
+      "/games/PredictorLeft.webp",
+      "/games/PredictorMain.webp",
+      "/games/PredictorRight.webp",
     ],
     stats: [
       { value: "44M+", label: "predictions placed" },

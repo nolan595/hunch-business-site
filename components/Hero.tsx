@@ -36,12 +36,12 @@ export default function Hero() {
         {/* Phone mockups — desktop only */}
         <div className="hidden lg:block">
         {[
-          { src: "/games/PredictorMain.png",  top: "-5%",  right: "22%", w: 160, rot: -8,  op: 0.18 },
-          { src: "/games/StreakMain.png",      top: "8%",   right: "4%",  w: 200, rot: 6,   op: 0.22 },
-          { src: "/games/PredictorRight.png",  top: "42%",  right: "14%", w: 140, rot: -4,  op: 0.15 },
-          { src: "/games/StreakLeft.png",       top: "55%",  right: "1%",  w: 170, rot: 8,   op: 0.18 },
-          { src: "/games/PredictorLeft.jpg",   top: "10%",  right: "38%", w: 120, rot: 5,   op: 0.12 },
-          { src: "/games/StreakRight.jpg",      top: "65%",  right: "30%", w: 130, rot: -6,  op: 0.13 },
+          { src: "/games/PredictorMain.webp",  top: "-5%",  right: "22%", w: 160, rot: -8,  op: 0.18 },
+          { src: "/games/StreakMain.webp",      top: "8%",   right: "4%",  w: 200, rot: 6,   op: 0.22 },
+          { src: "/games/PredictorRight.webp",  top: "42%",  right: "14%", w: 140, rot: -4,  op: 0.15 },
+          { src: "/games/StreakLeft.webp",       top: "55%",  right: "1%",  w: 170, rot: 8,   op: 0.18 },
+          { src: "/games/PredictorLeft.webp",   top: "10%",  right: "38%", w: 120, rot: 5,   op: 0.12 },
+          { src: "/games/StreakRight.webp",      top: "65%",  right: "30%", w: 130, rot: -6,  op: 0.13 },
         ].map(({ src, top, right, w, rot, op }) => {
           const h = Math.round(w * (19.5 / 9));
           return (

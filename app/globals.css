@@ -45,7 +45,7 @@
   --color-grey-800: var(--grey-800);
   --color-grey-900: var(--grey-900);
 
-  --font-display: var(--font-space-grotesk);
+  --font-display: var(--font-space-grotesk), system-ui, sans-serif;
   --font-body: var(--font-inter);
 
   --animate-pulse-ring: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;

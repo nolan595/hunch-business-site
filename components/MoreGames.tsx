@@ -202,7 +202,7 @@ function Lightbox({
 
           {/* Phone fan */}
           <div className="flex justify-center mt-4 pb-2">
-            <PhoneFan srcs={game.screenshotSrcs} gradient={game.gradient} />
+            <PhoneFan srcs={game.screenshotSrcs} gradient={game.gradient} blur />
           </div>
 
           <div className="px-6 py-5">
@@ -229,7 +229,7 @@ function Lightbox({
         >
           {/* Phone fan panel */}
           <div className="flex w-64 shrink-0 items-center justify-center bg-brand-violet/30 py-8 lg:w-72">
-            <PhoneFan srcs={game.screenshotSrcs} gradient={game.gradient} />
+            <PhoneFan srcs={game.screenshotSrcs} gradient={game.gradient} blur />
           </div>
 
           {/* Info panel */}

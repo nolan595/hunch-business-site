@@ -7,9 +7,9 @@ import { fadeUp, staggerContainer } from "@/lib/motion";
 const testimonials = [
   {
     quote:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    name: "Eamonn O'Loughlin",
-    title: "Chief Operating Officer",
+      "Hunch's product suite and rapid local customisation gave us the exact edge we needed. They unlock key differentiators that allows Super to outpace established competitors in both acquiring and retaining players.",
+    name: "Eamonn",
+    title: "COO, Super",
   },
   {
     quote:
