@@ -11,7 +11,7 @@ import { useState } from "react";
 
 function TeamCard({ member }: { member: TeamMember }) {
   const [imgError, setImgError] = useState(false);
-  const photoSrc = `/team/${member.slug}.png`;
+  const photoSrc = `/team/${member.slug}.webp`;
 
   return (
     <motion.div

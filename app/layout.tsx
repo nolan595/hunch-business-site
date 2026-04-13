@@ -38,15 +38,7 @@ export default function RootLayout({
       lang="en"
       className={`${spaceGrotesk.variable} ${inter.variable} antialiased`}
     >
-      <head>
-        {/* Preload world-atlas map data so it's ready when LiveRegions mounts */}
-        <link
-          rel="preload"
-          href="https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json"
-          as="fetch"
-          crossOrigin="anonymous"
-        />
-      </head>
+      <head />
       <body>
         <a href="#what-we-do" className="skip-link">
           Skip to content

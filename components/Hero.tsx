@@ -19,17 +19,17 @@ export default function Hero() {
     >
       {/* Background — scattered phone mockups */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
-        {/* Magenta glow blob */}
+        {/* Magenta glow blob — desktop only (blur-[120px] is GPU-intensive on mobile) */}
         <div
-          className="absolute -left-1/4 top-1/4 h-[600px] w-[600px] rounded-full opacity-15 blur-[120px]"
+          className="hidden lg:block absolute -left-1/4 top-1/4 h-[600px] w-[600px] rounded-full opacity-15 blur-[120px]"
           style={{
             background: "radial-gradient(circle, var(--brand-magenta), transparent 70%)",
             animation: "drift 20s ease-in-out infinite alternate",
           }}
         />
-        {/* Cyan glow blob — right */}
+        {/* Cyan glow blob — desktop only */}
         <div
-          className="absolute -right-1/4 bottom-1/4 h-[500px] w-[500px] rounded-full opacity-10 blur-[140px]"
+          className="hidden lg:block absolute -right-1/4 bottom-1/4 h-[500px] w-[500px] rounded-full opacity-10 blur-[140px]"
           style={{ background: "radial-gradient(circle, var(--brand-cyan), transparent 70%)" }}
         />
 
