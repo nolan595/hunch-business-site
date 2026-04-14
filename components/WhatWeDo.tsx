@@ -1,23 +1,23 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
+import { Target, Flame, Zap } from "lucide-react";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { fadeUp, staggerContainer, slideFromRight } from "@/lib/motion";
 
 const features = [
   {
-    imgSrc: "/games/PredictorMain.webp",
+    icon: Target,
     title: "Pick'em & Predictors",
     desc: "One-off games tied to big fixtures. Pick6, stat predictors, score predictors.",
   },
   {
-    imgSrc: "/games/StreakMain.webp",
+    icon: Flame,
     title: "Streak Games",
     desc: "Daily challenges that compound. Players come back to keep their streak alive and chase the jackpot.",
   },
   {
-    imgSrc: "/games/Ptb1.webp",
+    icon: Zap,
     title: "Tournament Specials",
     desc: "Custom builds for World Cups, Champions League finals, and tentpole moments.",
   },
@@ -62,14 +62,8 @@ export default function WhatWeDo() {
                 variants={slideFromRight}
                 className="rounded-2xl bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
               >
-                <div className="mb-3 h-10 w-10 overflow-hidden rounded-lg">
-                  <Image
-                    src={f.imgSrc}
-                    alt=""
-                    width={40}
-                    height={40}
-                    className="h-full w-full object-cover"
-                  />
+                <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-violet-50">
+                  <f.icon size={20} className="text-brand-violet" />
                 </div>
                 <h3 className="mb-1 font-display font-semibold text-brand-violet">
                   {f.title}
