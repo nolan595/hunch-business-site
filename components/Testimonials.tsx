@@ -13,9 +13,9 @@ const testimonials = [
   },
   {
     quote:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
-    name: "Mark Flood",
-    title: "General Manager, Brazil",
+      "Working with Hunch has been an absolute pleasure. They truly listen to our local market needs and are quick to implement the solutions we need to keep our players engaged.",
+    name: "Robert Madzia",
+    title: "Head of Commercial PL",
   },
   {
     quote:

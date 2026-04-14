@@ -70,7 +70,7 @@ export default function Hero() {
       <div className="relative mx-auto max-w-7xl px-6 py-32 lg:py-0">
         <p
           style={heroStyle(0.05)}
-          className="mb-6 text-xs font-medium uppercase tracking-[0.15em] text-brand-cyan"
+          className="mb-6 text-lg font-medium uppercase tracking-[0.15em] text-brand-cyan"
         >
           In-house F2P for Super
         </p>
@@ -89,9 +89,9 @@ export default function Hero() {
           style={heroStyle(0.25)}
           className="mb-10 max-w-[60ch] text-lg leading-relaxed text-grey-200"
         >
-          Hunch is the sole F2P partner to Super &mdash; and that closeness
-          is the product. Deeper integration, smarter data, games that feel
-          native, not bolted on.
+          Hunch is the exclusive F2P partner to Super &mdash; and that is
+          the difference. Deeper integrations, smarter segmentation, connected
+          data, seamless user experience, not bolted on.
         </p>
 
         <div
