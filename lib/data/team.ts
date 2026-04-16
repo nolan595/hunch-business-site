@@ -7,7 +7,7 @@ export interface TeamMember {
 }
 
 export const leadership: TeamMember[] = [
-  { name: "Rob Egan", role: "Co-founder & MD", slug: "Rob", bio: "", photoPosition: "center 10%" },
+  { name: "Rob Egan", role: "Co-founder & MD", slug: "Rob", bio: "" },
   { name: "Mark Nolan", role: "Co-founder & CTO", slug: "markN", bio: "" },
   { name: "Renata Dima", role: "Head of Design & Research", slug: "Renata", bio: "" },
 ];
