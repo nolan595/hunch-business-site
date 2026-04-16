@@ -28,6 +28,14 @@ export default function Footer() {
             </svg>
             LinkedIn
           </a>
+          <a
+            href="http://www.super.xyz"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-grey-400 transition-colors hover:text-brand-cyan"
+          >
+            super.xyz
+          </a>
           <span className="text-sm text-grey-600">Built in Dublin</span>
         </div>
       </div>

@@ -26,7 +26,7 @@ export default function WhyInHouse() {
   return (
     <section id="why-in-house" className="bg-grey-50 py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6">
-        <SectionHeading title="Most Operators rent their F2P, not Superbet." />
+        <SectionHeading title="Most Operators rent their F2P, Super chose to invest." />
 
         <motion.div
           variants={staggerContainer}
