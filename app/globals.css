@@ -1,5 +1,18 @@
 @import "tailwindcss";
 
+/* ─── Country Flag Emoji Polyfill ──────────────── */
+/* Windows' Segoe UI Emoji has no flag glyphs — it falls back to drawing
+   the regional-indicator letters ("BR", "PL", etc.). We load Twemoji's
+   country-flag font from jsDelivr and scope it via unicode-range to the
+   regional indicator block (U+1F1E6–1F1FF) so it only applies to flag
+   codepoints. All other glyphs keep using Inter. */
+@font-face {
+  font-family: "Twemoji Country Flags";
+  src: url("https://cdn.jsdelivr.net/npm/country-flag-emoji-polyfill@0.1/dist/TwemojiCountryFlags.woff2") format("woff2");
+  font-display: swap;
+  unicode-range: U+1F1E6-1F1FF;
+}
+
 /* ─── Brand Tokens ─────────────────────────────── */
 :root {
   --brand-magenta: #E930B8;
@@ -130,7 +143,9 @@ html {
 body {
   background: var(--brand-violet-dk);
   color: #ffffff;
-  font-family: var(--font-body), system-ui, sans-serif;
+  /* "Twemoji Country Flags" is first so flag codepoints pull from it;
+     unicode-range keeps every other glyph on Inter. */
+  font-family: "Twemoji Country Flags", var(--font-body), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
