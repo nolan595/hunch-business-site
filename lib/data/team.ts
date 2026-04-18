@@ -14,7 +14,7 @@ export const leadership: TeamMember[] = [
 
 export const product: TeamMember[] = [
   { name: "Odhran O'Maoileidigh", role: "Senior Product Manager", slug: "Odhran", bio: "" },
-  { name: "Andrew Tibot", role: "Senior Product Manager", slug: "tibot", bio: "" },
+  { name: "Andrew Tibot", role: "Senior Product Manager", slug: "tibot", bio: "", photoPosition: "center 20%" },
   { name: "Jack Barry", role: "Junior Product Manager", slug: "jack", bio: "" },
   { name: "Caitriona McNamara", role: "Junior Product Manager", slug: "Caitriona", bio: "" },
 ];
