@@ -8,19 +8,19 @@ const testimonials = [
   {
     quote:
       "Hunch's product suite and rapid local customisation gave us the exact edge we needed. They unlock key differentiators that allows Super to outpace established competitors in both acquiring and retaining players.",
-    name: "Eamonn O'L",
+    name: "Eamonn O.",
     title: "COO, Super",
   },
   {
     quote:
       "Working with Hunch has been an absolute pleasure. They truly listen to our local market needs and are quick to implement the solutions we need to keep our players engaged.",
-    name: "Robert Madzia",
+    name: "Robert M.",
     title: "Head of Commercial Poland, Super",
   },
   {
     quote:
       "Hunch is a powerhouse team. From feeding us cross-border insights to their lightning-fast support, they've made our Greek F2P launch a success. I'm looking forward to our continued expansion as we completely evolve how the Greek market engages with Free-to-Play games.",
-    name: "Andreea Năftică",
+    name: "Andreea N.",
     title: "Commercial Director Greece, Super",
   },
 ];

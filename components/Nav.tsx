@@ -70,13 +70,15 @@ export default function Nav() {
               priority
             />
             <span className="text-white/30 text-base font-light select-none">×</span>
-            <Image
-              src="/brand/super.png"
-              alt="Super Technologies"
-              width={120}
-              height={36}
-              className="h-5 w-auto"
-            />
+            <a href="https://www.super.xyz/" target="_blank" rel="noopener noreferrer">
+              <Image
+                src="/brand/super.png"
+                alt="Super Technologies"
+                width={120}
+                height={36}
+                className="h-5 w-auto"
+              />
+            </a>
           </a>
 
           {/* Desktop links */}
