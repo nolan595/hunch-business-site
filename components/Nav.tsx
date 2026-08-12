@@ -60,15 +60,17 @@ export default function Nav() {
           className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4"
         >
           {/* Logo lockup */}
-          <a href="#hero" className="flex-shrink-0 flex items-center gap-3">
-            <Image
-              src="/brand/hunch-logo-violet.png"
-              alt="Hunch"
-              width={120}
-              height={36}
-              className="h-8 w-auto"
-              priority
-            />
+          <div className="flex-shrink-0 flex items-center gap-3">
+            <a href="#hero" className="flex items-center">
+              <Image
+                src="/brand/hunch-logo-violet.png"
+                alt="Hunch"
+                width={120}
+                height={36}
+                className="h-8 w-auto"
+                priority
+              />
+            </a>
             <span className="text-white/30 text-base font-light select-none">×</span>
             <a href="https://www.super.xyz/" target="_blank" rel="noopener noreferrer">
               <Image
@@ -79,7 +81,7 @@ export default function Nav() {
                 className="h-5 w-auto"
               />
             </a>
-          </a>
+          </div>
 
           {/* Desktop links */}
           <div className="hidden items-center gap-8 lg:flex">
