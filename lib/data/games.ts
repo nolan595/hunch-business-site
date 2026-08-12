@@ -51,4 +51,40 @@ export const games: Game[] = [
       { value: "6", label: "live markets" },
     ],
   },
+  {
+    id: "pass-the-ball",
+    name: "Pass the Ball",
+    tagline: "Keep it moving.",
+    description:
+      "A multiplayer F2P game built to drive Same Game Accumulators. Friends build a bet together, each picking a leg \u2014 then ride the result as a team.",
+    color: "magenta",
+    mockupSrcs: [
+      "/games/Ptb2.webp",
+      "/games/Ptb1.webp",
+      "/games/Ptb3.webp",
+    ],
+    stats: [
+      { value: "Multiplayer", label: "bet building" },
+      { value: "SGA", label: "driven mechanic" },
+      { value: "Native", label: "to Super app" },
+    ],
+  },
+  {
+    id: "connect3",
+    name: "Connect3",
+    tagline: "Three in a row.",
+    description:
+      "Bingo reimagined for sports. Players get a bingo sheet filled with betting markets instead of numbers \u2014 then watch it come alive as results roll in. First to connect three wins.",
+    color: "cyan",
+    mockupSrcs: [
+      "/games/connect2.webp",
+      "/games/connect1.webp",
+      "/games/connect3.webp",
+    ],
+    stats: [
+      { value: "Bingo", label: "reimagined" },
+      { value: "Live", label: "results tracking" },
+      { value: "Native", label: "to Super app" },
+    ],
+  },
 ];

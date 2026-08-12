@@ -9,24 +9,6 @@ export interface ComingSoonGame {
 
 export const comingSoonGames: ComingSoonGame[] = [
   {
-    id: "pass-the-ball",
-    name: "Pass the Ball",
-    tagline: "Keep it moving.",
-    description:
-      "A multiplayer F2P game built to drive Same Game Accumulators. Friends build a bet together, each picking a leg — then ride the result as a team. Bet together, win together.",
-    screenshotSrcs: ["/games/Ptb2.webp", "/games/Ptb1.webp", "/games/Ptb3.webp"],
-    gradient: "from-brand-magenta/30 via-brand-violet to-brand-violet-dk",
-  },
-  {
-    id: "connect3",
-    name: "Connect3",
-    tagline: "Three in a row.",
-    description:
-      "Bingo reimagined for sports. Players get a bingo sheet filled with betting markets instead of numbers — then watch it come alive as results roll in, with animations marking each hit. First to connect three wins.",
-    screenshotSrcs: ["/games/connect2.webp", "/games/connect1.webp", "/games/connect3.webp"],
-    gradient: "from-brand-cyan/30 via-brand-violet to-brand-violet-dk",
-  },
-  {
     id: "money-heist",
     name: "Money Heist",
     tagline: "Plan the perfect heist.",

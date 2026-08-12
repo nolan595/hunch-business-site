@@ -149,8 +149,7 @@ function GameSlide({ game }: { game: (typeof games)[number] }) {
 
 export default function Games() {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const game1Ref = useRef<HTMLDivElement>(null);
-  const game2Ref = useRef<HTMLDivElement>(null);
+  const slideRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
     const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -159,11 +158,14 @@ export default function Games() {
     if (window.innerWidth < 1024) return;
 
     const ctx = gsap.context(() => {
+      // One crossfade transition per slide-to-slide handoff, each given an
+      // equal scroll segment so the pin duration scales with the game count.
+      const transitions = games.length - 1;
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top top",
-          end: "+=200%",
+          end: `+=${transitions * 200}%`,
           scrub: 0.5,
           pin: true,
           anticipatePin: 1,
@@ -171,9 +173,15 @@ export default function Games() {
         },
       });
 
-      tl.to(game1Ref.current, { opacity: 0, y: -30, duration: 0.2 }, 0.4);
-      gsap.set(game2Ref.current, { opacity: 0, y: 30 });
-      tl.to(game2Ref.current, { opacity: 1, y: 0, duration: 0.2 }, 0.45);
+      for (let i = 1; i < games.length; i++) {
+        const outgoing = slideRefs.current[i - 1];
+        const incoming = slideRefs.current[i];
+        const segment = i - 1;
+
+        gsap.set(incoming, { opacity: 0, y: 30 });
+        tl.to(outgoing, { opacity: 0, y: -30, duration: 0.2 }, segment + 0.4);
+        tl.to(incoming, { opacity: 1, y: 0, duration: 0.2 }, segment + 0.45);
+      }
     }, sectionRef);
 
     return () => ctx.revert();
@@ -189,24 +197,31 @@ export default function Games() {
           <SectionHeading
             eyebrow="Our games"
             title="Our games."
-            subtitle="Two flagship products, hundreds of variants, all live inside Super."
+            subtitle="Four flagship products, hundreds of variants, all live inside Super."
             dark
           />
 
-          {/* Mobile: both games in normal flow, no overlap */}
+          {/* Mobile: every game in normal flow, no overlap */}
           <div className="lg:hidden mt-8 flex flex-col gap-16">
-            <GameSlide game={games[0]} />
-            <GameSlide game={games[1]} />
+            {games.map((game) => (
+              <GameSlide key={game.id} game={game} />
+            ))}
           </div>
 
-          {/* Desktop: GSAP-animated overlay */}
+          {/* Desktop: GSAP-animated overlay — first slide in flow, rest stacked absolutely on top */}
           <div className="relative mt-8 hidden lg:block">
-            <div ref={game1Ref}>
-              <GameSlide game={games[0]} />
-            </div>
-            <div ref={game2Ref} className="absolute inset-0" style={{ opacity: 0 }}>
-              <GameSlide game={games[1]} />
-            </div>
+            {games.map((game, i) => (
+              <div
+                key={game.id}
+                ref={(el) => {
+                  slideRefs.current[i] = el;
+                }}
+                className={i === 0 ? undefined : "absolute inset-0"}
+                style={i === 0 ? undefined : { opacity: 0 }}
+              >
+                <GameSlide game={game} />
+              </div>
+            ))}
           </div>
         </div>
       </div>

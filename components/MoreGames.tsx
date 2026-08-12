@@ -278,7 +278,7 @@ export default function MoreGames() {
           <SectionHeading
             eyebrow="Coming soon"
             title="New games in the pipeline."
-            subtitle="Three new formats launching across Super Technology markets — built in-house, designed to convert."
+            subtitle="New formats launching across Super Technology markets — built in-house, designed to convert."
             dark
           />
 
@@ -287,10 +287,15 @@ export default function MoreGames() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-60px" }}
-            className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
+            className="flex flex-wrap justify-center gap-5"
           >
             {comingSoonGames.map((game) => (
-              <GameCard key={game.id} game={game} onClick={() => setSelected(game)} />
+              <div
+                key={game.id}
+                className="w-full sm:w-[calc(50%-0.625rem)] lg:w-[calc(33.333%-0.834rem)]"
+              >
+                <GameCard game={game} onClick={() => setSelected(game)} />
+              </div>
             ))}
           </motion.div>
         </div>

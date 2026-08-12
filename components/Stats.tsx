@@ -7,7 +7,7 @@ import { useIsMobile } from "@/lib/hooks/useIsMobile";
 
 const stats = [
   { value: 6, label: "Live markets" },
-  { value: 2, label: "Flagship games" },
+  { value: 4, label: "Flagship games" },
   { value: "25+", label: "Team members" },
   { value: 1, label: "Sportsbook partner", note: "(and we like it that way)" },
 ];
